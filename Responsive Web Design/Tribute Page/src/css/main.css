@@ -1,0 +1,137 @@
+html {
+    font-family: Lato;
+    color: rgb(29, 29, 29);
+}
+
+body {
+    background-color: #fff8f2;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+}
+
+#main {
+    display: grid;
+    grid-template-columns: 4fr 5fr;
+    grid-template-areas:
+        "header header"
+        "main achievements"
+        "timeline timeline"
+        "sources sources";
+    background-color: #ecdbcc;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px black;
+    padding: 2em;
+    grid-gap: 2em;
+}
+
+@media (max-width: 1275px) {
+    #main {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+            "header"
+            "main"
+            "achievements"
+            "timeline"
+            "sources";
+    }  
+}
+
+@media (max-width: 600px) {
+    #main {
+        padding: 1em;
+    }
+
+    #achievements-info, #timeline-info {
+        padding: 15px;
+    }
+
+    body {
+        padding: 0;
+    }   
+}
+
+header {
+    grid-area: header;
+    background-color: #c9beb5;
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+#short {
+    font-style: italic;
+    text-align: center;
+}
+
+#title {
+    font-size: 75px;
+    margin: 1px;
+}
+
+
+
+#tribute-info {
+    grid-area: main;
+    text-align: justify;
+}
+
+#img-div {
+    
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#img-caption {
+    font-size: 14px;
+    text-align: center;
+}
+
+#timeline {
+    grid-area: timeline;
+    background-color: #AFA6A1;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: justify;
+}
+
+.year, .device {
+    font-weight: bold;
+    display: inline;
+}
+
+#achievements {
+    grid-area: achievements;
+    background-color: #5B5752;
+    color: #fdfdfd;
+    border-radius: 5px;
+    padding: 30px;
+    text-align: justify;
+}
+
+#sources {
+    grid-area: sources;
+    text-align: center;
+    font-size: 14px;
+}
+
+
+#sources-list {
+    padding: 0;
+}
+
+#tribute-link {
+    font-weight: 600;
+}
+
+footer {
+    text-align: center;
+    margin: 30px;
+}

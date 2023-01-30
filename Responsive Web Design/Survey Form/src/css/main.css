@@ -1,0 +1,178 @@
+html {
+  font-family: "Noto Sans";
+  background-color: rgb(240, 240, 240);
+  background: repeating-linear-gradient(
+    45deg,
+    rgb(240, 240, 240) 0px,
+    rgb(240, 240, 240) 120px,
+    rgb(236, 236, 236) 120px,
+    rgb(236, 236, 236) 240px
+  );
+  color: rgb(43, 43, 43);
+}
+
+section {
+  text-align: center;
+}
+
+section h1 {
+  font-size: xxx-large;
+}
+
+#required-sections-info {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+  font-size: 14px;
+  font-style: italic;
+}
+
+#info {
+  margin-left: 3em;
+  margin-right: 3em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  color: rgb(73, 73, 73);
+  text-align: justify;
+  font-size: 13px;
+  font-style: italic;
+}
+
+#privacy-policy {
+  text-decoration: underline;
+}
+
+form {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  width: 40em;
+}
+
+@media (max-width: 682px) {
+  form {
+    width: 100%;
+  }
+}
+
+label {
+  padding: 0.5em;
+}
+
+.fill p {
+  font-weight: bold;
+}
+
+.fill {
+  margin: 0.75em;
+  background-color: rgb(230, 230, 230);
+  border-radius: 17px;
+  padding: 1em;
+  width: auto;
+  box-shadow: 0 0 6px black;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.fill:hover {
+  opacity: 1;
+}
+
+.input,
+.input-radio,
+.input-checkbox {
+  background-color: rgb(216, 216, 216);
+  border-radius: 17px;
+  margin-top: 0.5em;
+  padding: 0.5em;
+}
+
+.input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-radio,
+.input-checkbox {
+  line-height: 1.5em;
+}
+
+input,
+select,
+textarea {
+  border-radius: 10px;
+  padding: 0.75em;
+  border: 2px solid black;
+  resize: none;
+  background-color: rgb(245, 245, 245);
+  transition: background-color 0.3s, color 0.3s;
+  color: rgb(65, 65, 65);
+}
+
+select {
+  width: 60%;
+}
+
+textarea {
+  font-family: "Noto Sans";
+  width: 100%;
+  box-sizing: border-box;
+  background-color: rgb(245, 245, 245);
+  
+}
+
+.star {
+  font-size: 13px;
+  color: rgb(167, 0, 0);
+}
+
+#name,
+#email,
+#number,
+#dropdown,
+#role-dropdown {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#button {
+  margin: 0.75em;
+}
+
+#submit {
+  width: 100%;
+  margin-top: 0.75em;
+  align-self: center;
+  padding: 0.5em;
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: #7e7e7e;
+  border: 1px solid rgb(54, 54, 54);
+  opacity: 0.8;
+  transition: background-color 0.3s, border-radius 0.3s, opacity 0.3s;
+}
+
+#submit:hover {
+  opacity: 1;
+  background-color: #6b6b6b;
+  border-radius: 25px;
+}
+
+#submit:active {
+  background-color: #525252;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  background-color: white;
+  color: rgb(29, 29, 29);
+}
+
+footer {
+  font-size: 0.9rem;
+  padding: 1rem;
+  text-align: center;
+}

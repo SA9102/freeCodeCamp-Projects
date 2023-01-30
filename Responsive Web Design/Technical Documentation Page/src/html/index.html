@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Technical Documentation Page</title>
+</head>
+<body>
+    <nav id="navbar">
+        <header>
+            <p>CSS Documentation</p>
+        </header>
+
+        <div id="links">
+            <a href="#What_is_CSS?" class="nav-link">What is CSS?</a>
+            <a href="#Syntax" class="nav-link">Syntax</a>
+            <a href="#Adding_CSS_to_an_HTML_document" class="nav-link">Adding CSS to an HTML document</a>
+            <a href="#The_box_model" class="nav-link">The box model</a>
+            <a href="#Fonts" class="nav-link">Fonts</a>
+            <a href="#Positioning" class="nav-link">Positioning</a>
+            <a href="#Flexbox" class="nav-link">Flexbox</a>
+            <a href="#Grid" class="nav-link">Grid</a>
+            <a href="#Media_Query_Basics" class="nav-link">Media Query Basics</a>
+            <a href="#Reference" class="nav-link">Reference</a>
+        </div>
+    </nav>
+    
+    <main id="main-doc">
+        <section class="main-section" id="What_is_CSS?">
+            <header><h1>What is CSS?</h1></header>
+                <p>In the Introduction to HTML module we covered what HTML is, and how it is used to mark up documents. These documents will be readable in a web browser. Headings will look larger than regular text, paragraphs break onto a new line and have space between them. Links are colored and underlined to distinguish them from the rest of the text. What you are seeing is the browser's default styles — very basic styles that the browser applies to HTML to make sure it will be basically readable even if no explicit styling is specified by the author of the page.<br><br>However, the web would be a boring place if all websites looked like this. CSS (Cascading Style Sheets) allows you to control exactly how HTML elements look in the browser, presenting your markup using whatever design you like. With CSS, you can create great-looking web pages.</p>
+            
+        </section><br>
+
+        <section class="main-section" id="Syntax">
+            <header><h1>Syntax</h1></header>
+            <p>CSS is a rule-based language, meaning you define rules specifying groups of styles that should be applied to particular elements or groups of elements on your web page.<br><br>Here's an example of some code that makes the main heading show as large red text: <br><br><br><code class="snippet">h1 { color: red; font-size: 5em; }</code><br><br>The rule opens with a selector, which selects the HTML element that we are going to style.<br><br>We then have a set of curly braces { }. Inside those will be one or more declarations, which take the form of property and value pairs. Each pair specifies a property of the element(s) we are selecting, then a value that we'd like to give the property.<br><br>Before the colon, we have the property, and after the colon, the value. CSS properties have different allowable values, depending on which property is being specified.<br><br>A CSS stylesheet will contain many such rules, written one after the other. For example:<br><br><br><code class="snippet">h1 { color: red; font-size: 5em; } p { color: black; }</code><br></p>
+        </section><br>
+
+        <section class="main-section" id="Adding_CSS_to_an_HTML_document">
+            <header><h1>Adding CSS to an HTML document</h1></header>
+            <p>The very first thing we need to do is to tell the HTML document that we have some CSS rules we want it to use. There are three different ways to apply CSS to an HTML document that you'll commonly come across, however, we will look at the most usual and useful way of doing so — linking CSS from the head of your document.<br><br>To link a CSS document to an HTML document, add the following line somewhere inside the <code>&lthead></code> of the HTML document:<br><br><br><code class="snippet">&ltlink rel="stylesheet"href="styles.css"></code><br><br>This <code>&ltlink></code> element tells the browser that we have a stylesheet, using the <code>rel</code> attribute, and the location of that stylesheet as the value of the <code>href</code> attribute. Use the name of the CSS document as the location.</p>
+        </section><br>
+
+        <section class="main-section" id="The_box_model">
+            <header><h1>The box model</h1></header>
+            <p>Everything in CSS has a box around it, and understanding these boxes is key to being able to create layouts with CSS, or to align items with other items.<br><br>The box model defines how the different parts of a box — margin, border, padding, and content — work together to create a box that you can see on a page. To add some additional complexity, there is a standard and an alternate box model.</p>
+            <img src="../../assets/box-model.png"><br><br>
+
+            <h2>Parts of a box</h2>
+            <p>Each element is comprised of a content, padding, border, and margin box.</p>
+            <ul>
+                <li><b>Content box</b>: The area where your content is displayed, which can be sized using properties like <code>width</code> and <code>height</code>.</li>
+                <li><b>Padding box</b>: The padding sits around the content as white space; its size can be controlled using <code>padding</code> and related properties.</li>
+                <li><b>Border box</b>: The border box wraps the content and any padding. Its size and style can be controlled using <code>border</code> and related properties.</li>
+                <li><b>Margin box</b>: The margin is the outermost layer, wrapping the content, padding, and border as whitespace between this box and other elements. Its size can be controlled using <code>margin</code> and related properties.</li>
+            </ul><br>
+
+            <h2>The standard CSS box model</h2>
+            <p>In the standard box model, if you give a box a width and a height attribute, this defines the width and height of the content box. Any padding and border is then added to that width and height to get the total size taken up by the box.<br><br>If we assume that a box has the following CSS defining width, height, margin, border, and padding:<br><br><br><code class="snippet">.box { width: 350px; height: 150px; margin: 10px; padding: 25px; border: 5px solid black; }</code><br><br>The actual space taken up by the box will be 410px wide (350 + 25 + 25 + 5 + 5) and 210px high (150 + 25 + 25 + 5 + 5).</p>
+            <img src="../../assets/standard-box-model.png"><br><br>
+
+            <h2>The alternative CSS box model</h2>
+            <p>CSS had an alternative box model introduced some time after the standard box model. Using this model, any width is the width of the visible box on the page, therefore the content area width is that width minus the width for the padding and border. The same CSS as used above would give the below result (width = 350px, height = 150px).</p>
+            <img src="../../assets/alternate-box-model.png">
+            <p>By default, browsers use the standard box model. If you want to turn on the alternative model for an element, you do so by setting <code>box-sizing: border-box</code> on it.<br><br><br><code class="snippet">.box { box-sizing: border-box; }</code><br></p>
+            
+        </section><br>
+
+        <section class="main-section" id="Fonts">
+            <header><h1>Fonts</h1></header>
+
+            <h2>Colour</h2>
+            <p>The <code>color</code> property sets the colour of the foreground content of the selected elements, which is usually the text, but can also include a couple of other things, such as an underline or overline placed on text using the <code>text-decoration</code> property.<code>color</code> can accept any CSS colour unit, for example:<br><br><br><code class="snippet">p { color: red; }</code><br><br>This will cause the paragraphs to become red, rather than the standard browser default of black.</p><br>
+
+            <h2>Font families</h2>
+            <p>To set a different font for your text, you use the <code>font-family</code> property — this allows you to specify a font (or list of fonts) for the browser to apply to the selected elements. The browser will only apply a font if it is available on the machine the website is being accessed on; if not, it will just use a browser default font. A simple example looks like so:<br><br><br><code class="snippet">p { font-family: arial; }</code><br><br>This would make all paragraphs on a page adopt the arial font, which is found on any computer.</p><br>
+            <h3>Default Fonts</h3>
+            <p>CSS defines five generic names for fonts: <code>serif</code>, <code>sans-serif</code>, <code>monospace</code>, <code>cursive</code>, and <code>fantasy</code>.<br><br>These are very generic and the exact font face used from these generic names can vary between each browser and each operating system that they are displayed on. It represents a worst case scenario where the browser will try its best to provide a font that looks appropriate.</p><br>
+            <h3>Font stack</h3>
+            <p>Since you can't guarantee the availability of the fonts you want to use on your webpages (even a web font could fail for some reason), you can supply a font stack so that the browser has multiple fonts it can choose from. This involves a <code>font-family</code> value consisting of multiple font names separated by commas, e.g.,<br><br><br><code class="snippet">p { font-family: "Trebuchet MS", Verdana, sans-serif; }</code><br><br>In such a case, the browser starts at the beginning of the list and looks to see if that font is available on the machine. If it is, it applies that font to the selected elements. If not, it moves on to the next font, and so on.</p><br>
+
+            <h2>Font size</h2>
+            <p>Font size (set with the font-size property) can take values measured in a variety of units units, including percentages. However, the most common units you'll use to size text are:</p>
+            <ul>
+                <li><code>px</code> (pixels): The number of pixels high you want the text to be. This is an absolute unit — it results in the same final computed value for the font on the page in pretty much any situation.</li>
+                <li><code>em</code>s: 1 <code>em</code> is equal to the font size set on the parent element of the current element we are styling. An entire website sized using <code>em</code> makes maintenance easy.</li>
+                <li><code>rem</code>s: These work just like <code>em</code>, except that 1 <code>rem</code> is equal to the font size set on the root element of the document (i.e. <code>&lthtml></code>), not the parent element.</li>
+            </ul>
+            <p>The <code>font-size</code> of an element is inherited from that element's parent element. This all starts with the root element of the entire document — <code>&lthtml></code> — the standard <code>font-size</code> of which is set to 16 <code>px</code> across browsers. Any paragraph (or another element that doesn't have a different size set by the browser) inside the root element will have a final size of 16 <code>px</code>. Other elements may have different default sizes. For example, an <code>&lth1></code> element has a size of 2 <code>em</code> set by default, so it will have a final size of 32 <code>px</code>.</p><br>
+            
+            <h2>Font style</h2>
+            <p>You can use the <code>font-style</code> property to alter the visual emphasis of text.<br><br>Possible values of this property are as follows:</p>
+            <ul>
+                <li><code>normal</code>: Sets the text to the normal font (turns existing italics off).</li>
+                <li><code>italic</code>: Sets the text to use the italic version of the font.</li>
+                <li><code>oblique</code>: Sets the text to use a simulated version of an italic font, created by slanting the normal version.</li>
+            </ul><br>
+
+            <h2>Font weight</h2>
+            <p>CSS also provides the <code>font-weight</code> property, which is used to change the visual weight of text.<br><br>Possible values of this property are as follows:</p>
+            <ul>
+                <li><code>normal</code>: Sets the font to normal weight.</li>
+                <li><code>bold</code>: Sets the font to bold weight.</li>
+            </ul><br>
+
+            <h2>Text alignment</h2>
+            <p>The text-align property is used to control how text is aligned within its containing content box. They can take the following values:</p>
+            <ul>
+                <li><code>left</code>: Positions the text to the left.</li>
+                <li><code>right</code>: Positions the text to the right.</li>
+                <li><code>center</code>: Positions the text to the centre.</li>
+                <li><code>justify</code>: Makes the text spread out, varying the gaps in between the words so that all lines of text are the same width.</li>
+            </ul>
+        </section><br>
+
+        <section class="main-section" id="Positioning">
+            <header><h1>Positioning</h1></header>
+            <p>Positioning allows us to produce interesting results by overriding normal document flow.<br><br>There are a number of different types of positioning that you can put into effect on HTML elements. To make a specific type of positioning active on an element, we use the <code>position</code> property.</p><br>
+            
+            <h2>Types of positioning</h2>
+            <p>The <code>position</code> property can take one of the following values:</p>
+            <ul>
+                <li><code>static</code>: This puts the element into its normal position in the document flow. This is the default value.</li>
+                <li><code>relative</code>: This is very similar to static positioning, except that once the positioned element has taken its place in the normal flow, you can then modify its final position, using the <code>top</code>, <code>bottom</code>, <code>left</code> and <code>right</code> properties (this will be discussed shortly).</li>
+                <li><code>absolute</code>: This takes the element out of the document flow, and sits on its own separate layer. It will be ignored by all other elements. Like <code>relative</code> positioning, its position can be adjusted aforementioned properties. However, an <code>absolute</code> element will be adjusted relative to each of the containing element's sides.*</li>
+                <li><code>fixed</code>: This works in exactly the same way as absolute positioning, but fixed positioningfixed positioning usually fixes an element in place relative to the visible portion of the viewport.</li>
+                <li><code>sticky</code>: This allows a positioned element to act like it's relatively positioned until it's scrolled to a certain threshold, after which it becomes fixed.</li>
+            </ul><br>
+            <p>*The containing element of an absolutely positioned element depends on the position property of the ancestors of the positioned element. If no ancestor elements have their position property explicitly defined, then by default all ancestor elements will have a static position. This means that the absolutely positioned element will be positioned relative to the initial viewport. However, if the absolutely positioned element has an ancestor whose position is explicitly defined to anything other than <code>static</code>, then the absolutely positioned element will be relative to <em>that</em> ancestor.</p><br>
+
+            <h2>Top, bottom, left and right</h2>
+            <p><code>top</code>, <code>bottom</code>, <code>left</code>, and <code>right</code> are used alongside position to specify exactly where to move the positioned element to.<br><br><br><code class="snippet">top: 30px;</code><br><br>This code tells the element to move 30px from the top edge of the container (i.e. 30px downwards). Likewise:<br><br><br><code class="snippet">left: 30px;</code><br><br>This will tell the element to move 30px from the left edge of the container (i.e. 30px to the right).</p>
+        </section><br>
+
+        <section class="main-section" id="Flexbox">
+            <header><h1>Flexbox</h1></header>
+            <p>Flexbox is a one-dimensional layout method for arranging items in rows or columns. Items flex (expand) to fill additional space or shrink to fit into smaller spaces.<br><br>It is a much easier method of creating layouts than floats and positioning, which were used before flexbox existed.</p><br>
+
+            <h2>Specifying what elements to lay out as flexible boxes</h2>
+            <p>We first need to select which elements are to be laid out as flexible boxes. To do this, we set the value of <code>display</code> to <code>flex</code> on the parent element of the elements we want to affect.<br><br><br><code class="snippet">parent { display: flex; }</code><br><br>This causes the parent element to become a flex container and its children to become flex items.</p><br>
+
+            
+
+            <h2>The flex model</h2>
+            <img src="../../assets/flex_terms.png">
+            <p>When elements are laid out as flex items, they are laid out along two axes:</p>
+            <ul>
+                <li>The main axis is the axis running in the direction the flex items are laid out in (for example, as rows across the page, or columns down the page.) The start and end of this axis are called the main start and main end.</li>
+                <li>The cross axis is the axis running perpendicular to the direction the flex items are laid out in. The start and end of this axis are called the cross start and cross end.</li>
+                <li>The parent element that has <code>display: flex</code> set on it is called the flex container.</li>
+                <li>The items laid out as flexible boxes inside the flex container are called flex items.</li>
+            </ul><br>
+
+            <h2>Columns and rows</h2>
+            <p>Flexbox provides a property called <code>flex-direction</code> that specifies which direction the main axis runs (which direction the flexbox children are laid out in). By default this is set to <code>row</code>, which causes them to be laid out in a row in the direction your browser's default language works in.<br><br><br><code class="snippet">parent { flex-direction: row; }</code><br><br>This property can also be set to <code>column</code>.</p><br>
+
+            <h2>Wrapping</h2>
+            <p>One issue that arises when you have a fixed width or height in your layout is that eventually your flexbox children will overflow their container, breaking the layout. This can be fixed by adding the following code to the parent container:<br><br><br><code class="snippet">flex-wrap: wrap;</code><br><br>Next, add the following declaration to the flex items:<br><br><br><code class="snippet">flex: 200px; }</code><br><br>There are now multiple rows. Each row has as many flexbox children fitted into it as is sensible. Any overflow is moved down to the next line. The <code>flex: 200px</code> declaration set on the articles means that each will be at least 200px wide. You can have different <code>flex</code> values for different flex items.</p><br>
+
+            <h2>Horizontal and vertical alignment</h2>
+            <p>You can also use flexbox features to align flex items along the main or cross axis.<br><br>The <code>justify-content</code> property (added in the parent container) controls where the flex items sit on the main axis, and can take the following values:</p>
+            <ul>
+                <li><code>flex-start</code>: This makes all the items sit at the start of the main axis. This is the default value.</li>
+                <li><code>flex-end</code>: This makes all the items sit at the end of the main axis.</li>
+                <li><code>center</code>: This makes all the items sit in the centre of the main axis.</li>
+                <li><code>space-around</code>: This makes all the items sit in the centre of the main axis.</li>
+                <li><code>space-evenly</code>: Very similar to <code>space-around</code>, however</li>
+                <li><code>space-between</code>: Similar to <code>space-around</code>, except that it doesn't leave any space at either end. This means that the first and last flex items are positioned right at opposite edges of the container.</li>
+            </ul><br>
+
+            <p>The <code>align-items</code> property (added in the parent container) controls where the flex items sit on the cross axis, and can take the following values:</p>
+            <ul>
+                <li><code>stretch</code>: This stretches all flex items to fill the parent in the direction of the cross axis. This is the default value.</li>
+                <li><code>flex-start</code>: This makes all the items sit at the start of the cross axis.</li>
+                <li><code>flex-end</code>: This makes all the items sit at the end of the cross axis.</li>
+                <li><code>center</code>: This makes all the items sit in the centre of the cross axis.</li>
+            </ul><br>
+        </section>
+
+        <section class="main-section" id="Grid">
+            <header><h1>Grid</h1></header>
+            <p>CSS Grid Layout is a two-dimensional layout system for the web. It lets you lay content out in rows and columns. It has many features that make building complex layouts straightforward.<br><br>A grid is a collection of horizontal and vertical lines creating a pattern against which we can line up our design elements. They help us to create layouts in which our elements won't jump around or change width as we move from page to page, providing greater consistency on our websites.<br><br>A grid will typically have columns, rows, and then gaps between each row and column. The gaps are commonly referred to as gutters.</p>
+            <img src="../../assets/grid.png"><br><br>
+
+            <h2>Defining a grid</h2>
+            <p>To define a grid we use the <code>grid</code> value of the <code>display</code> property. As with Flexbox, this enables Grid Layout; all of the direct children of the container become grid items.<br><br><br><code class="snippet">.container { display: grid; }</code><br><br>Next, we will need to add columns and/or rows to the grid. This can be done using the <code>grid-template-columns</code> and <code>grid-template-rows</code> properties respectively.<br><br><br><code class="snippet">.container { display: grid; grid-template-columns: 200px 200px 200px;}</code><br><br>The code above will create a grid that has three column tracks with 200px as a fixed width. The number of values passed into this property will dictate the number of columns.</p><br>
+
+            <h2>Flexible grids with the <b>fr</b> unit</h2>
+            <p>The <code>fr</code> unit flexibly sizes grid rows and columns. This unit represents one fraction of the available space in the grid container.<br><br><br><code class="snippet">.container { display: grid; grid-template-columns: 1fr 1fr 1fr;}</code><br><br>The code above will create three columns that take up equals amounts of available space in the container. When the viewport changes, the container width will change and so the width of these columns will change also, but they will still take up equal amounts of space.<br><br><br><code class="snippet">.container { display: grid; grid-template-columns: 2fr 1fr 1fr;}</code><br><br>Now, the first column gets <code>2fr</code> of the available space and the other two tracks get <code>1fr</code>, making the first track larger. You can mix <code>fr</code> units with fixed length units — in such a case the space needed for the fixed tracks is used up first; the remaining space is then distributed to the other tracks.</p><br>
+
+            <h2>Gaps between tracks</h2>
+            <p>To create gaps between tracks we use the properties <code>column-gap</code> for gaps between columns, <code>row-gap</code> for gaps between rows, and <code>gap</code> as a shorthand for both. These gaps can be any length unit or percentage, but not an fr unit. Example code:<br><br><br><code class="snippet">.container { display: grid; grid-template-rows: 2fr 1fr 1fr; gap: 20px; }</code><br><br></p><br>
+        
+            <h2>The implicit and explicit grid</h2>
+            <p>The explicit grid is the one that you create using <code>grid-template-columns</code> or <code>grid-template-rows</code>. The implicit grid is created when content is placed outside of that grid, such as into our rows.<br><br>By default, tracks created in the implicit grid are <code>auto</code> sized, which in general means that they're large enough to accommodate their content. If you wish to give implicit grid tracks a size, you can use the <code>grid-auto-rows</code> and <code>grid-auto-columns</code> properties. If you add <code>grid-auto-rows</code> with a value of 100px to your CSS, you'll see that those created rows are now 100 pixels tall.<br><br><br><code class="snippet">.container { display: grid; grid-template-columns: 1fr 1fr 1fr; grid-auto-rows: 100px; gap: 20px; }</code><br><br></p><br>
+            
+            <h2>Line-based placement</h2>
+            <p>Our grid always has lines — these are numbered beginning with 1 and relate to the writing mode of the document. We can arrange things in accordance with these lines by specifying the start and end line. We do this using the following properties:</p>
+            <ul>
+                <li><code>grid-column-start</code>: Specifies which column line the column should start at.</li>
+                <li><code>grid-column-end</code>: Specifies which column line the column end start at.</li>
+                <li><code>grid-row-start</code>: Specifies which row line the row should start at.</li>
+                <li><code>grid-row-end</code>: Specifies which row line the row end start at.</li>
+            </ul>
+
+            <p>These properties can all have a line number as their value. You can also use the shorthand properties:</p>
+            <ul>
+                <li><code>grid-column</code></li>
+                <li><code>grid-row</code></li>
+            </ul>
+            <p>These let you specify the start and end lines at once, separated by a forward slash /.<br><br><br><code class="snippet">header { grid-column: 1/3; grid-row: 1; }</code><br><br>The code above specifies that the header takes up two columns (column lines 1 to 3), and takes up the entire first row.</p><br>
+
+            <h2>Positioning with grid-template-areas</h2>
+            <p>An alternative way to arrange items on your grid is to use the <code>grid-template-areas</code> property and give the various elements of your design a name. Here's an example:<br><br><br><code class="snippet">.container { display: grid; grid-template-areas: "header header" "sidebar content" "footer footer"; grid-template-columns: 1fr 3fr; gap: 20px; }</code><br><code class="snippet">header { grid-area: header; }</code><br><br>This will result in the header being in the same position as before, without needing to use any line numbers. This is a very nice way to describe a layout because it's clear just from looking at the CSS to know exactly what's happening.<br><br>The rules for <code>grid-template-areas</code> are as follows:</p>
+            <ul>
+                <li>You need to have every cell of the grid filled.</li>
+                <li>To span across multiple cells, repeat the name.</li>
+                <li>To leave a cell empty, use a <code>.</code> (period).</li>
+                <li>Areas must be rectangular — for example, you can’t have an L-shaped area.</li>
+                <li>Areas can't be repeated in different locations.</li>
+            </ul>
+            
+        </section><br>
+
+        <section class="main-section" id="Media_Query_Basics">
+            <header><h1>Media Query Basics</h1></header>
+            <p>Media queries let you adapt your site or app depending on the presence or value of various device characteristics and parameters. They are essential for responsive design.<br><br>A simple media query syntax looks like this:<br><br><br><code class="snippet">@media media-type and (media-feature-rule) { /* CSS rules go here */ }</code><br><br>The code above consists of:</p>
+            <ul>
+                <li>A media type, which tells the browser what kind of media this code is for (e.g. print, or screen).</li>
+                <li>A media expression, which is a rule, or test that must be passed for the contained CSS to be applied.</li>
+                <li>A set of CSS rules that will be applied if the test passes and the media type is correct.</li>
+            </ul><br>
+
+            <h2>Media types</h2>
+            <p>The possible types of media you can specify are:</p>
+            <ul>
+                <li><code>all</code></li>
+                <li><code>print</code></li>
+                <li><code>screen</code></li>
+            </ul>
+            <p>The following media query will only set the body to 12pt if the page is printed. It will not apply when the page is loaded in a browser.<br><br><br><code class="snippet">@media print { body { font-size: 12pt; } }</code><br><br></p>
+
+            <h2>Media feature rules</h2>
+            <p>After specifying the type, you can then target a media feature with a rule.</p><br>
+
+            <h3>Width and height</h3>
+            <p>The feature we tend to detect most often in order to create responsive designs (and that has widespread browser support) is viewport width, and we can apply CSS if the viewport is above or below a certain width — or an exact width — using the <code>min-width</code>, <code>max-width</code>, and <code>width</code> media features. These features are used to create layouts that respond to different screen sizes.<br><br><br><code class="snippet">@media screen and (width: 600px) { body { color: red } }</code><br><br>The code above wil change the body text colour to red if the viewport is exactly 600 pixels.<br><br>The <code>width</code> (and <code>height</code>) media features can be used as ranges, and therefore be prefixed with <code>min-</code> or <code>max-</code> to indicate that the given value is a minimum, or a maximum. The code below makes the body text blue if the viewport is narrower than 600 pixels.<br><br><br><code class="snippet">@media screen and (max-width: 600px) { body { color: blue } }</code><br><br></p>
+
+            <h3>Orientation</h3>
+            <p>One well-supported media feature is <code>orientation</code>, which allows us to test for portrait or landscape mode. To change the body text color if the device is in landscape orientation, use the following media query.<br><br><br><code class="snippet">@media (orientation: landscape) { body { color: red } }</code><br><br><br></p>
+
+            <h3>Use of pointing devices</h3>
+            <p>With the <code>hover</code> media feature, you can test if the user has the ability to hover over an element, which essentially means they are using some kind of pointing device; touchscreen and keyboard navigation does not hover.<br><br><br><code class="snippet">@media (hover: hover) { body { color: red } }</code><br><br>If we know the user cannot hover, we could display some interactive features by default. For users who can hover, we might choose to make them available when a link is hovered over.<br><br>Additionally, there is the <code>pointer</code> media feature. This takes three possible values, <code>none</code>, <code>fine</code> and <code>coarse</code>. A <code>fine</code> pointer is something like a mouse or trackpad. It enables the user to precisely target a small area. A <code>coarse</code> pointer is your finger on a touchscreen. The <code>value</code> none means the user has no pointing device; perhaps they are navigating with the keyboard only or with voice commands.</p>
+        </section><br>
+
+        <section class="main-section" id="Reference">
+            <header><h1>Reference</h1></header>
+            <p>This documentation was taken from MDN Web Docs.</p>
+        </section>
+
+        <br>
+        <br>
+        <footer>
+            <hr>
+            <p>&copy; Shayan Ali (SA9102). Created for freeCodeCamp.</p>
+        </footer>        
+    </main>
+</body>
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+</html>

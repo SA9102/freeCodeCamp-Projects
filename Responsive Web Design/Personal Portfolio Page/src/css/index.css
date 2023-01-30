@@ -1,0 +1,479 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-family: "Roboto", sans-serif;
+    scroll-behavior: smooth;
+  }
+  
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    border: none;
+  }
+  
+  .section {
+    padding: 10rem;
+  }
+  
+  .section-p {
+    font-size: 1.6rem;
+  }
+  
+  .section-heading {
+    font-size: 4rem;
+  }
+  
+  #navbar {
+    margin: 0;
+    background-color: #cfcfcf;
+    padding: 0.01rem;
+    box-shadow: 0px 0px 5px -1px;
+    text-align: center;
+  }
+  
+  header {
+    position: fixed;
+  }
+  
+  #navbar-list {
+    width: 100vw;
+    font-size: 1.3rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #1a1a1a;
+    transition-property: padding, color;
+    transition-duration: 400ms;
+    text-align: center;
+  }
+  
+  .nav-item a:hover {
+    color: #5c5c5c;
+  }
+  
+  #welcome-section {
+    margin: 0;
+    background: linear-gradient(60deg, #242424, #353535);
+    height: 100vh;
+  }
+  
+  #welcome-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #e9e9e9;
+    text-shadow: 2px 2px 5px #111111;
+  }
+  
+  #welcome-text h1 {
+    font-size: 5rem;
+    text-align: center;
+  }
+  
+  
+  #full-stack-developer {
+    font-size: 2rem;
+    font-style: italic;
+    font-weight: 100;
+    padding-top: 1.5rem;
+  }
+  
+  #experience {
+    margin: 0;
+    background: linear-gradient(30deg, #88a3b5, #6a7f8d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10rem;
+    color: #1a1a1a;
+  }
+  
+  #experience-intro h1 {
+    text-shadow: 0px 0px 10px #6b818f;
+  }
+  
+  #experience-intro p {
+    font-style: italic;
+  }
+  
+  #experience-content {
+    flex-shrink: 1.2;
+    background-color: #aabdca;
+    border-radius: 4rem;
+    padding: 3rem;
+    font-size: 1.3rem;
+    align-self: center;
+    box-shadow: 0px 0px 20px -10px;
+  }
+  
+  #experience-icons {
+    padding-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  #projects {
+    margin: 0;
+    background: linear-gradient(75deg, #2b3b45, #1c262e);
+    height: 100%;
+  }
+  
+  #projects h1 {
+    text-align: center;
+    color: #e9e9e9;
+    text-shadow: 0px 0px 10px #11181b;
+  }
+  
+  #projects-info p {
+    font-style: italic;
+    text-align: center;
+    color: #e9e9e9;
+  }
+  
+  #tiles {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+    padding: 5rem;
+  }
+  
+  #tiles a:focus {
+    outline: none !important;
+    text-decoration: none;
+  }
+  
+  .project-tile {
+    width: 350px;
+    height: 350px;
+    background-color: #71848e;
+    border-radius: 3%;
+    box-shadow: 0 0 10px -2px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .project-tile .image {
+    width: 85%;
+    height: 60%;
+    background-color: #869ba7;
+    border-radius: 3%;
+    border-right: 2px solid #61727a;
+    border-bottom: 2px solid #61727a;
+    justify-items: center;
+  }
+  
+  .project-tile p {
+    font-size: 1.5rem;
+    justify-self: flex-end;
+    color: #11181b;
+  }
+  
+  .project-tile a {
+    color: #11181b;
+  }
+  
+  #contact {
+    margin: 0;
+    background: repeating-linear-gradient(
+      60deg,
+      #573136,
+      #573136 100px,
+      rgb(83, 46, 52) 100px,
+      rgb(83, 46, 52) 200px
+    );
+    text-align: center;
+    color: #e9e9e9;
+  }
+  
+  #contact h1 {
+    text-shadow: 0px 0px 10px #241316;
+  }
+  
+  #contact p {
+    font-style: italic;
+  }
+  #icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+  }
+  
+  #icons img {
+    width: 40px;
+    height: 40px;
+    filter: brightness(100000%) filter(1);
+    transition-duration: 500ms;
+    transition-property: background-color;
+  }
+  
+  #contact h1 {
+    transition-property: background-color;
+  }
+  
+  footer {
+    color: #e9e9e9;
+    padding: 2rem;
+    padding-right: 30rem;
+    padding-left: 30rem;
+    background-color: rgb(22, 22, 22);
+    height: 100%;
+    border-top: 1px solid rgb(190, 190, 190);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  footer p {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  footer ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  
+  footer a {
+    color: #e9e9e9;
+  }
+  
+  @media (max-width: 1735px) {
+    .section {
+      padding: 7rem;
+    }
+  }
+  
+  @media (max-width: 1675px) {
+    footer {
+      padding-right: 25rem;
+      padding-left: 25rem;
+    }
+  }
+  
+  @media (max-width: 1480px) {
+    footer {
+      padding-right: 20rem;
+      padding-left: 20rem;
+    }
+  }
+  
+  @media (max-width: 1300px) {
+    footer {
+      padding-right: 13rem;
+      padding-left: 13rem;
+    }
+  }
+  
+  @media (max-width: 1075px) {
+    footer {
+      padding-right: 8rem;
+      padding-left: 8rem;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    footer {
+      padding-right: 5rem;
+      padding-left: 5rem;
+    }
+  }
+  
+  @media (max-width: 800px) {
+    footer {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    footer {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    footer p {
+      font-size: 1rem;
+    }
+  
+    footer ul {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media (max-width: 1180px) {
+    .section {
+      padding: 5rem;
+    }
+  }
+  
+  @media (max-width: 960px) {
+    .section {
+      padding: 4rem;
+    }
+  }
+  
+  @media (max-width: 750px) {
+    .section {
+      padding: 3rem;
+    }
+  }
+  @media (max-width: 660px) {
+    .section {
+      padding: 2rem;
+    }
+  
+    #experience-content {
+      border-radius: 3rem;
+    }
+  }
+  
+  @media (max-width: 630px) {
+    .nav-item a {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .nav-item a {
+      font-size: 1.1rem;
+    }
+  }
+  @media (max-width: 440px) {
+    .nav-item a {
+      font-size: 1rem;
+    }
+  }
+  @media (max-width: 1200px) {
+    .section-heading {
+      font-size: 3rem;
+    }
+  
+    .section-p {
+      font-size: 1.5rem;
+    }
+  
+    #experience-content p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 610px) {
+    .section-heading {
+      font-size: 2.5rem;
+    }
+    .section-p {
+      font-size: 1.3rem;
+    }
+  
+    #experience-content p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    #tiles {
+      padding: 0rem;
+    }
+  }
+  
+  @media (max-width: 560px) {
+    .project-tile {
+      width: 275px;
+      height: 275px;
+    }
+  
+    .project-tile p {
+      font-size: 1.3rem;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .section-heading {
+      font-size: 2rem;
+    }
+    #experience-content {
+      border-radius: 1.5rem;
+    }
+    .section-p {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media (max-width: 450px) {
+    .section {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 612px) {
+    #welcome-text h1 {
+      font-size: 4rem;
+    }
+  }
+  @media (max-width: 450px) {
+    #welcome-text h1 {
+      font-size: 3rem;
+    }
+  
+    #full-stack-developer {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 1490px) {
+    #experience {
+      flex-direction: column;
+      gap: 4rem;
+    }
+  
+    #experience-intro h1,
+    #experience-intro p,
+    #experience-content {
+      text-align: center;
+    }
+  }
+  
+  @media (max-width: 815px) {
+    #experience-content {
+      padding: 2.5rem;
+    }
+  }
+  
+  @media (max-width: 380px) {
+    #experience-content {
+      padding: 1.5rem;
+    }
+  }
+  
+  @media (min-width: 575px) {
+    .nav-item a:hover {
+      padding-right: 2rem;
+      padding-left: 2rem;
+    }
+  }
+  

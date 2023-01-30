@@ -1,0 +1,155 @@
+html {
+    font-family: 'Open Sans';
+    color: white;
+    background-color: #202020;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    
+}
+
+#navbar {
+    
+    padding: 40px;
+    background-color: #1a1a1a;
+    position: fixed;
+    top: 0;
+    
+    
+}
+
+#navbar header {
+    font-weight: bold;
+    font-size: 30px;
+}
+
+#links {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+a {
+    font-size: 20px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    text-decoration: none;
+    color: white;
+    padding: 13px;
+    transition: background-color 0.2s;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: rgb(36, 36, 36);
+}
+
+#main-doc {
+    margin-left: 430px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 55px;
+    padding-right: 165px;
+    background-color: #202020;
+    color: rgb(175, 175, 175);
+    font-size: 18px;
+    line-height: 32px;
+}
+
+#main-doc header {
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: normal;
+}
+
+#main-doc h2, h3 {
+    color: white;
+}
+
+#main-doc h3 {
+    font-style: italic;
+}
+
+.snippet {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 20px;
+    border-radius: 12px;
+    background-color: #2e2e2e;
+    display: block;
+}
+
+code {
+    background-color: rgb(58, 58, 58);
+    
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+
+@media only screen and (min-width: 959px) {
+
+    #navbar {
+        bottom: 0;
+        width: 350px;
+    }
+
+    #links {
+        height: 70%;
+    }
+}
+
+@media only screen and (max-width: 1107px) {
+
+    #main-doc {
+        padding-right: 50px;
+    }
+}
+
+@media only screen and (max-width: 959px) {
+
+    #navbar {
+        position: relative;
+        padding: 20px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        height: 230px;
+    }
+
+    #links {
+        background-color: #1a1a1a;
+        height: 60%;
+    }
+
+    #navbar header {
+        font-size: 23px;
+    }
+
+    a {
+        font-size: 18px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+        
+        padding: 7px;
+    }
+
+    #main-doc {
+        margin: 0;
+    }
+
+    .snippet {
+        box-sizing: border-box;
+    }
+}
+
+footer p {
+    font-size: 14px;
+}

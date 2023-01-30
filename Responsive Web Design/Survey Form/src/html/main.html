@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <title>Survey Form</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1 id="title">Workshop Survey</h1>
+            <p id="description"><strong>Thank you for participating in our online workshop. We hope you enjoyed
+                    it.</strong><br><br>If you have some time, please fill out this survey.<br>Your feedback will be
+                used to improve future workshops.</p>
+        </section>
+
+        <form id="survey-form">
+            <p id="required-sections-info">Sections marked with a '*' are required.</p>
+            <div class="fill">
+                <label for="name" id="name-label"><span class="star">*</span>Name</label>
+                <div class="input">
+                    <input type="text" name="name" placeholder="Enter your name..." id="name" required>
+                </div>
+            </div>
+            <div class="fill">
+                <label for="email" id="email-label"><span class="star">*</span>Email</label>
+                <div class="input">
+                    <input type="email" name="email" placeholder="Enter your email..." id="email" required>
+                </div>
+            </div>
+            <div class="fill">
+                <label for="number" id="number-label"><span class="star">*</span>Age</label>
+                <div class="input">
+                    <input type="number" name="age" min="1" max="99" placeholder="Enter your age..." id="number"
+                        required>
+                </div>
+            </div>
+
+            <div class="fill">
+                <label for="dropdown" id="gender-label"><span class="star">*</span>Gender</label>
+                <div class="input">
+                    <select name="gender" id="dropdown" required>
+                        <option value="" disabled selected class="dropdown-placeholder">Select gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p>Do you have any visual/auditory impairments?</p>
+                <div class="input-checkbox">
+                    <div id="visual-checkboxes">
+                        <p>Visual impairments:</p>
+                        <input type="checkbox" name="visual" value="colour-blindness" id="colour-blindness">
+                        <label for="colour-blindness">Colour blindness</label><br>
+
+                        <input type="checkbox" name="visual" value="blurred-vision" id="blurred-vision">
+                        <label for="blurred-vision">Blurred vision</label><br>
+
+                        <input type="checkbox" name="visual" value="light-sensitivity" id="light-sensitivity">
+                        <label for="light-sensitivity">Light sensitivity</label><br>
+
+                        <input type="checkbox" name="visual" value="other-visual" id="other-visual">
+                        <label for="other-visual">Other</label>
+                    </div>
+
+                    <div id="auditory-checkboxes">
+                        <p>Auditory impairments:</p>
+                        <input type="checkbox" name="auditory" value="mild" id="mild">
+                        <label for="mild">Mild hearing loss</label><br>
+
+                        <input type="checkbox" name="auditory" value="moderate" id="moderate">
+                        <label for="moderate">Moderate hearing loss</label><br>
+
+                        <input type="checkbox" name="auditory" value="severe" id="severe">
+                        <label for="severe">Severe hearing loss</label><br>
+
+                        <input type="checkbox" name="auditory" value="other-auditory" id="other-auditory">
+                        <label for="other-auditory">Other</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="fill">
+                <label for="role-dropdown" id="role-label"><span class="star">*</span>Role</label>
+                <div class="input">
+                    <select name="role" id="role-dropdown" required>
+                        <option value="" disabled selected class="dropdown-placeholder">Select role</option>
+                        <option value="student">Student</option>
+                        <option value="full-time-job">Full-time job</option>
+                        <option value="other">Other</option>
+                        <option value="prefer-not-to-say">Prefer not to say</option>
+                    </select>
+                </div>
+            </div>
+
+            <p id="info">Why are we asking this information?<br>By having an idea of the groups of people who
+                participate in our workshops, we can tailor our workshops to ensure that these groups are also
+                able to benefit and, if needed, produce separate workshops for them (e.g. people with
+                visual/auditory impairments).<br><br><strong>The personal information you input above will remain
+                    confidential, and
+                    will only be used
+                    for the aforementioned purpose. Read our <a href="#" id="privacy-policy">privacy policy</a> for more
+                    informaion.</strong>
+            </p>
+
+            <div class="fill">
+                <p><span class="star">*</span>Is this your first time participating in our workshops?</p>
+                <div class="input-radio">
+                    <input type="radio" name="first-time" value="yes" id="yes" required>
+                    <label for="yes">Yes</label><br>
+
+                    <input type="radio" name="first-time" value="no" id="no">
+                    <label for="no">No</label>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p><span class="star">*</span>How much programming experience did you already have?</p>
+                <div class="input-radio">
+                    <input type="radio" name="experience" value="no-experience" id="no-experience" required>
+                    <label for="no-experience">No experience</label><br>
+
+                    <input type="radio" name="experience" value="little" id="little">
+                    <label for="little">Little experience</label><br>
+
+                    <input type="radio" name="experience" value="some" id="some">
+                    <label for="some">Some experience</label><br>
+
+                    <input type="radio" name="experience" value="a-lot" id="a-lot">
+                    <label for="a-lot">A lot of experience</label><br>
+
+                    <input type="radio" name="experience" value="huge" id="huge">
+                    <label for="huge">Huge amount of experience</label>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p><span class="star">*</span>How did you find the length of the workshop?</p>
+                <div class="input-radio">
+
+                    <input type="radio" name="length" value="too-long" id="too-long" required>
+                    <label for="too-long">Too long</label><br>
+
+                    <input type="radio" name="length" value="little-long" id="little-long">
+                    <label for="little-long">A little long</label><br>
+
+                    <input type="radio" name="length" value="right" id="right">
+                    <label for="right">Just right</label><br>
+
+                    <input type="radio" name="length" value="little-short" id="little-short">
+                    <label for="little-short">A little short</label><br>
+
+                    <input type="radio" name="length" value="too-short" id="too-short">
+                    <label for="too-short">Too short</label>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p><span class="star">*</span>Did you think the speaker(s) was/were good? Why or why not?</p>
+                <div class="input">
+                    <textarea placeholder="Enter your comment here..." required></textarea>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p><span class="star">*</span>Overall, how did you find the workshop?</p>
+                <div class="input">
+                    <textarea placeholder="Enter your comment here..." required></textarea>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p>Which parts of the workshop did you enjoy/learn a lot from?</p>
+                <div class="input-checkbox">
+                    <input type="checkbox" name="parts" value="concepts" id="concepts">
+                    <label for="concepts">Programming language concept explanations</label><br>
+
+                    <input type="checkbox" name="parts" value="coding-sessions" id="coding-sessions">
+                    <label for="coding-sessions">Coding sessions</label><br>
+
+                    <input type="checkbox" name="parts" value="challenges" id="challenges">
+                    <label for="challenges">Coding challenges</label><br>
+
+                    <input type="checkbox" name="parts" value="discussions" id="discussions">
+                    <label for="discussions">Discussions</label><br>
+
+                    <input type="checkbox" name="parts" value="questions-and-answers" id="questions-and-answers">
+                    <label for="questions-and-answers">Questions and answers</label><br>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p>What do you think could have been better about the workshop?</p>
+                <div class="input">
+                    <textarea placeholder="Enter your comment here..."></textarea>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p><span class="star">*</span>Would you recommend our workshops to a friend?</p>
+                <div class="input-radio">
+                    <input type="radio" name="recommend" value="definitely" id="definitely" required>
+                    <label for="definitely">Definitely</label><br>
+
+                    <input type="radio" name="recommend" value="maybe" id="maybe">
+                    <label for="maybe">Maybe</label><br>
+
+                    <input type="radio" name="recommend" value="maybe-not" id="maybe-not">
+                    <label for="maybe-not">Maybe not</label><br>
+
+                    <input type="radio" name="recommend" value="not-at-all" id="not-at-all">
+                    <label for="not-at-all">Not at all</label><br>
+
+                    <input type="radio" name="recommend" value="not-sure" id="not-sure">
+                    <label for="not-sure">Not sure</label>
+                </div>
+            </div>
+
+            <div class="fill">
+                <p>Do you have any additional comments or suggestions?</p>
+                <div class="input">
+                    <textarea placeholder="Enter your comment here..."></textarea>
+                </div>
+            </div>
+
+            <div id="button">
+                <button type="submit" id="submit">Submit</button>
+            </div>
+        </form>
+
+    </main>
+
+    <footer>
+        <p>&copy; Shayan Ali (SA9102). Created for freeCodeCamp.</p>
+    </footer>
+
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+
+</body>
+
+</html>
